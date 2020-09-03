@@ -19,29 +19,42 @@ class enemy:
 
 def die_roll(n):
 	return random.randint(0, n)
+
+def spawn_zombies(number_of_enemies):
+	array_of_zombies = []
+	for i in range(number_of_enemies):
+		zombie = enemy(3,1,3)
+		array_of_zombies.append(zombie)
+	return array_of_zombies
 	
 
 player = human(3,3,3,3)
-zombie = enemy(3,1,3)
 
-level = [zombie]
+level = 3
+
+enemyArray = spawn_zombies(level)
 
 print('#############################')
 print('ENEMY TURN')
 
-for enemies in level:
+for enemy in enemyArray:
+	print(enemy)
+
+for enemy in enemyArray:
 	roll = die_roll(6)
 	print(roll)
 	
 	if (roll > player.defence):
 		print("the zombie successfully attacks!")
-		player.health -= zombie.attack
+		player.health -= enemy.attack
 	else:
 		print("you fight the zombie off")
-		player.defence -= zombie.attack
+		player.defence -= enemy.attack
 	
 print("player's health = " + str(player.health))
 print("player's defence is = " + str(player.defence))
+for enemy in enemyArray:
+	print("zombie health = " + str(enemy.health))
 
 print("##############################")
 print('PLAYER TURN')
@@ -50,12 +63,16 @@ for turns in range(0, player.speed):
 	roll = die_roll(6)
 	print(roll)
 	
-	if (roll > zombie.defence):
+	if (roll > enemyArray[0].defence):
 		print("you successfully attack the zombie!")
-		zombie.health -= player.attack
+		enemyArray[0].health -= player.attack
+		if (enemyArray[0].health <= 0):
+			print("You killed the zombie")
+			enemyArray.pop(0)
 	else:
 		print("you miss the zombie")
-		zombie.defence -= player.attack
-	
-print("zombie's health = " + str(zombie.health))
-print("zombie's defence is = " + str(zombie.defence))
+		enemyArray[0].defence -= player.attack
+
+for enemy in enemyArray:	
+	print("zombie's health = " + str(enemy.health))
+	print("zombie's defence is = " + str(enemy.defence))
