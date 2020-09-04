@@ -1,0 +1,29 @@
+#############################
+ENEMY TURN
+<classesAndFunctions.enemy object at 0x7fdbb9094af0>
+<classesAndFunctions.enemy object at 0x7fdbb922c430>
+<classesAndFunctions.enemy object at 0x7fdbb922c490>
+4
+the zombie successfully attacks!
+3
+you fight the zombie off
+3
+the zombie successfully attacks!
+player's health = 1
+player's defence is = 2
+zombie health = 3
+zombie health = 3
+zombie health = 3
+##############################
+PLAYER TURN
+2
+you miss the zombie
+6
+you successfully attack the zombie!
+You killed the zombie
+2
+you miss the zombie
+zombie's health = 3
+zombie's defence is = 0
+zombie's health = 3
+zombie's defence is = 3

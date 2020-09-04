@@ -1,32 +1,15 @@
 import random
+from classesAndFunctions import *
 
-#created in anticipation of creating players with different stats
-class human:
-	
-	def __init__(self, health, attack, defence, speed):
-		self.health = health
-		self.attack = attack
-		self.defence = defence
-		self.speed = speed
-	
-	
-class enemy:
-	
-	def __init__(self, health, attack, defence):
-		self.health = health
-		self.attack = attack
-		self.defence = defence
+# opens the game log text file where each move will be copied down
+# currently opens with "w", so overwrites the last session
+# look at using "a" to append the file but stamp each session with a date/time at this point 
+f = open("gameLog.txt", "w")
 
-def die_roll(n):
-	return random.randint(0, n)
-
-def spawn_zombies(number_of_enemies):
-	array_of_zombies = []
-	for i in range(number_of_enemies):
-		zombie = enemy(3,1,3)
-		array_of_zombies.append(zombie)
-	return array_of_zombies
-	
+# custom function to print to the console and to the game log file at the same time
+def printy(text):
+	print(text)
+	print(text, file=f)
 
 player = human(3,3,3,3)
 
@@ -34,45 +17,48 @@ level = 3
 
 enemyArray = spawn_zombies(level)
 
-print('#############################')
-print('ENEMY TURN')
+printy('#############################')
+printy('ENEMY TURN')
 
 for enemy in enemyArray:
-	print(enemy)
+	printy(enemy)
 
 for enemy in enemyArray:
 	roll = die_roll(6)
-	print(roll)
+	printy(roll)
 	
 	if (roll > player.defence):
-		print("the zombie successfully attacks!")
+		printy("the zombie successfully attacks!")
 		player.health -= enemy.attack
 	else:
-		print("you fight the zombie off")
+		printy("you fight the zombie off")
 		player.defence -= enemy.attack
 	
-print("player's health = " + str(player.health))
-print("player's defence is = " + str(player.defence))
+printy("player's health = " + str(player.health))
+printy("player's defence is = " + str(player.defence))
 for enemy in enemyArray:
-	print("zombie health = " + str(enemy.health))
+	printy("zombie health = " + str(enemy.health))
 
-print("##############################")
-print('PLAYER TURN')
+printy("##############################")
+printy('PLAYER TURN')
 
 for turns in range(0, player.speed):
 	roll = die_roll(6)
-	print(roll)
+	printy(roll)
 	
 	if (roll > enemyArray[0].defence):
-		print("you successfully attack the zombie!")
+		printy("you successfully attack the zombie!")
 		enemyArray[0].health -= player.attack
 		if (enemyArray[0].health <= 0):
-			print("You killed the zombie")
+			printy("You killed the zombie")
 			enemyArray.pop(0)
 	else:
-		print("you miss the zombie")
+		printy("you miss the zombie")
 		enemyArray[0].defence -= player.attack
 
 for enemy in enemyArray:	
-	print("zombie's health = " + str(enemy.health))
-	print("zombie's defence is = " + str(enemy.defence))
+	printy("zombie's health = " + str(enemy.health))
+	printy("zombie's defence is = " + str(enemy.defence))
+
+# close the game log text file
+f.close()
