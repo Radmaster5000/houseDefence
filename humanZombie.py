@@ -20,12 +20,10 @@ enemyArray = spawn_zombies(level)
 printy('#############################')
 printy('ENEMY TURN')
 
-for enemy in enemyArray:
-	printy(enemy)
 
 for enemy in enemyArray:
 	roll = die_roll(6)
-	printy(roll)
+	printy("The enemy roles an attack: " + str(roll))
 	
 	if (roll > player.defence):
 		printy("the zombie successfully attacks!")
@@ -37,7 +35,7 @@ for enemy in enemyArray:
 printy("player's health = " + str(player.health))
 printy("player's defence is = " + str(player.defence))
 for enemy in enemyArray:
-	printy("zombie health = " + str(enemy.health))
+	printy(str(enemy.uid) + "'s health = " + str(enemy.health))
 
 printy("##############################")
 printy('PLAYER TURN')
@@ -47,18 +45,18 @@ for turns in range(0, player.speed):
 	printy(roll)
 	
 	if (roll > enemyArray[0].defence):
-		printy("you successfully attack the zombie!")
+		printy("you successfully attack " + enemy.uid)
 		enemyArray[0].health -= player.attack
 		if (enemyArray[0].health <= 0):
-			printy("You killed the zombie")
+			printy("You killed " + enemy.uid)
 			enemyArray.pop(0)
 	else:
 		printy("you miss the zombie")
 		enemyArray[0].defence -= player.attack
 
 for enemy in enemyArray:	
-	printy("zombie's health = " + str(enemy.health))
-	printy("zombie's defence is = " + str(enemy.defence))
+	printy(enemy.uid + "'s health = " + str(enemy.health))
+	printy(enemy.uid + "'s defence is = " + str(enemy.defence))
 
 # close the game log text file
 f.close()

@@ -12,10 +12,11 @@ class human:
 	
 class enemy:
 	
-	def __init__(self, health, attack, defence):
+	def __init__(self, health, attack, defence, uid):
 		self.health = health
 		self.attack = attack
 		self.defence = defence
+		self.uid = uid
 
 def die_roll(n):
 	return random.randint(0, n)
@@ -24,7 +25,8 @@ def die_roll(n):
 def spawn_zombies(number_of_enemies):
 	array_of_zombies = []
 	for i in range(number_of_enemies):
-		zombie = enemy(3,1,3)
+		uid = 'zombie'+str(i)
+		zombie = enemy(3,1,3, uid)
 		array_of_zombies.append(zombie)
 	return array_of_zombies
 	

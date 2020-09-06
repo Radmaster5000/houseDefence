@@ -1,29 +1,26 @@
 #############################
 ENEMY TURN
-<classesAndFunctions.enemy object at 0x7fdbb9094af0>
-<classesAndFunctions.enemy object at 0x7fdbb922c430>
-<classesAndFunctions.enemy object at 0x7fdbb922c490>
-4
-the zombie successfully attacks!
-3
+The enemy roles an attack: 1
 you fight the zombie off
-3
+The enemy roles an attack: 4
+the zombie successfully attacks!
+The enemy roles an attack: 5
 the zombie successfully attacks!
 player's health = 1
 player's defence is = 2
-zombie health = 3
-zombie health = 3
-zombie health = 3
+zombie0's health = 3
+zombie1's health = 3
+zombie2's health = 3
 ##############################
 PLAYER TURN
-2
+5
+you successfully attack zombie2
+You killed zombie2
+1
 you miss the zombie
-6
-you successfully attack the zombie!
-You killed the zombie
-2
+0
 you miss the zombie
-zombie's health = 3
-zombie's defence is = 0
-zombie's health = 3
-zombie's defence is = 3
+zombie1's health = 3
+zombie1's defence is = -3
+zombie2's health = 3
+zombie2's defence is = 3
