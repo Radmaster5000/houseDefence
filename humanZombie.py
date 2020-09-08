@@ -11,7 +11,7 @@ def printy(text):
 	print(text)
 	print(text, file=f)
 
-player = human(3,3,3,3)
+player = human(3,3,3,6)
 
 level = 3
 
@@ -40,20 +40,36 @@ for enemy in enemyArray:
 printy("##############################")
 printy('PLAYER TURN')
 
+# Initialise target outside of attack loop
+# This identifies the target in the enemyArray
+target = 0
+
 for turns in range(0, player.speed):
-	roll = die_roll(6)
-	printy(roll)
 	
-	if (roll > enemyArray[0].defence):
-		printy("you successfully attack " + enemy.uid)
-		enemyArray[0].health -= player.attack
-		if (enemyArray[0].health <= 0):
-			printy("You killed " + enemy.uid)
-			enemyArray.pop(0)
+	if (len(enemyArray) == 0):
+		print("Congrats! You won!")
+		quit()
+
+	# It the target variable reaches the end of the array, reset it
+	if (target >= len(enemyArray)):
+		target = 0
+
+	roll = die_roll(6)
+	printy("The player rolled a: " + str(roll))
+	
+	if (roll > enemyArray[target].defence):
+		printy("you successfully attack " + enemyArray[target].uid)
+		enemyArray[target].health -= player.attack
+		if (enemyArray[target].health <= 0):
+			printy("You killed " + enemyArray[target].uid)
+			enemyArray.pop(target)
+			target -= 1
 	else:
 		printy("you miss the zombie")
-		enemyArray[0].defence -= player.attack
+		enemyArray[target].defence -= player.attack
 
+	# Increment variable to target the next enemy in the array
+	target += 1
 for enemy in enemyArray:	
 	printy(enemy.uid + "'s health = " + str(enemy.health))
 	printy(enemy.uid + "'s defence is = " + str(enemy.defence))
