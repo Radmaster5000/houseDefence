@@ -1,11 +1,11 @@
 #############################
 ENEMY TURN
-The enemy roles an attack: 1
+The enemy roles an attack: 0
 you fight the zombie off
-The enemy roles an attack: 1
-you fight the zombie off
-The enemy roles an attack: 2
+The enemy roles an attack: 5
 the zombie successfully attacks!
+The enemy roles an attack: 0
+you fight the zombie off
 player's health = 2
 player's defence is = 1
 zombie0's health = 3
@@ -13,12 +13,16 @@ zombie1's health = 3
 zombie2's health = 3
 ##############################
 PLAYER TURN
-The player rolled a: 6
+The player rolled a: 4
 you successfully attack zombie0
 You killed zombie0
-The player rolled a: 5
-you successfully attack zombie1
-You killed zombie1
-The player rolled a: 5
-you successfully attack zombie2
-You killed zombie2
+The player rolled a: 2
+you miss the zombie
+The player rolled a: 1
+you miss the zombie
+zombie1's health = 3
+zombie1's defence is = 0
+zombie2's health = 3
+zombie2's defence is = 0
+player's health = 2
+player's defence is = 1
