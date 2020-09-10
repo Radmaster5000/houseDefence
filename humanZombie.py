@@ -11,7 +11,17 @@ f = open("gameLog.txt", "w")
 
 player = human(3,3,3,3)
 
-round(3, player, f)
+numOfRounds = 3
+i = 1
+
+for rounds in range(0, numOfRounds):
+	
+
+	printy("This is round " + str(i),f)
+	
+	round(i, player, f)
+
+	i+=1
 
 printy("player's health = " + str(player.health),f)
 printy("player's defence is = " + str(player.defence),f)
