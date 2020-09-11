@@ -24,9 +24,10 @@ def printy(text, textFile):
 	print(text)
 	print(text, file=textFile)
 
-def round(roundNum, playerObj, textFile):
+def round(roundNum, playerObj, pointsValue, textFile):
 	level = roundNum
 	player = playerObj
+	points = pointsValue
 	f = textFile
 	enemyArray = spawn_zombies(level)
 	printy('ROUND NUMBER ' + str(level), f)
@@ -78,6 +79,7 @@ def round(roundNum, playerObj, textFile):
 				enemyArray[target].health -= player.attack
 				if (enemyArray[target].health <= 0):
 					printy("You killed " + enemyArray[target].uid,f)
+					points += 1
 					enemyArray.pop(target)
 					target -= 1
 			else:
@@ -90,7 +92,20 @@ def round(roundNum, playerObj, textFile):
 		printy(enemy.uid + "'s health = " + str(enemy.health),f)
 		printy(enemy.uid + "'s defence is = " + str(enemy.defence),f)
 
-	return player
+	return player, points
+
+def round_interval(pointsValue, textFile):
+	points = pointsValue
+	f = textFile
+	printy("####################################", f)
+	printy("It's the calm before another storm", f)
+	printy("You have " + str(points) + " to spend.", f)
+	printy("What would you like to upgrade?", f)
+	choice = input("> ")
+	if (choice == 'spend'):
+		points -= 1
+
+	return points
 
 def spawn_zombies(number_of_enemies):
 	array_of_zombies = []

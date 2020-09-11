@@ -8,7 +8,7 @@ f = open("gameLog.txt", "w")
 
 # custom function to print to the console and to the game log file at the same time
 
-
+points = 0
 player = human(3,3,3,3)
 
 numOfRounds = 3
@@ -19,12 +19,14 @@ for rounds in range(0, numOfRounds):
 
 	printy("This is round " + str(i),f)
 	
-	round(i, player, f)
+	player, points = round(i, player, points, f)
+
+	points = round_interval(points, f)
 
 	i+=1
 
 printy("player's health = " + str(player.health),f)
 printy("player's defence is = " + str(player.defence),f)
-
+printy(points,f)
 # close the game log text file
 f.close()
