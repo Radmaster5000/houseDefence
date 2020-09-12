@@ -1,20 +1,17 @@
 This is round 1
 ROUND NUMBER 1
 NUMBER OF ENEMIES 1
-#############################
-ENEMY TURN
-The enemy roles an attack: 4
-the zombie successfully attacks!
-player's health = 2
-player's defence is = 3
-zombie0's health = 3
 ##############################
 PLAYER TURN
-The player rolled a: 1
-you miss the zombie
-The player rolled a: 4
+The player rolled a: 5
 you successfully attack zombie0
 You killed zombie0
+Congrats! You killed all the zombies
+#############################
+ENEMY TURN
+There are no zombies left to attack you.
+player's health = 3
+player's defence is = 3
 ####################################
 It's the calm before another storm
 You have 1 to spend.
@@ -22,63 +19,47 @@ What would you like to upgrade?
 This is round 2
 ROUND NUMBER 2
 NUMBER OF ENEMIES 2
-#############################
-ENEMY TURN
-The enemy roles an attack: 6
-the zombie successfully attacks!
-The enemy roles an attack: 2
-you fight the zombie off
-player's health = 1
-player's defence is = 2
-zombie0's health = 3
-zombie1's health = 3
-##############################
-PLAYER TURN
-The player rolled a: 0
-you miss the zombie
-The player rolled a: 4
-you successfully attack zombie1
-You killed zombie1
-The player rolled a: 2
-you successfully attack zombie0
-You killed zombie0
-####################################
-It's the calm before another storm
-You have 0 to spend.
-What would you like to upgrade?
-This is round 3
-ROUND NUMBER 3
-NUMBER OF ENEMIES 3
-#############################
-ENEMY TURN
-The enemy roles an attack: 6
-the zombie successfully attacks!
-The enemy roles an attack: 1
-you fight the zombie off
-The enemy roles an attack: 0
-you fight the zombie off
-player's health = 0
-player's defence is = 0
-zombie0's health = 3
-zombie1's health = 3
-zombie2's health = 3
 ##############################
 PLAYER TURN
 The player rolled a: 6
 you successfully attack zombie0
 You killed zombie0
-The player rolled a: 2
+The player rolled a: 3
 you miss the zombie
-The player rolled a: 2
-you miss the zombie
-zombie1's health = 3
-zombie1's defence is = 0
-zombie2's health = 3
-zombie2's defence is = 0
+The player rolled a: 1
+you successfully attack zombie1
+You killed zombie1
+Congrats! You killed all the zombies
+#############################
+ENEMY TURN
+There are no zombies left to attack you.
+player's health = 3
+player's defence is = 3
 ####################################
 It's the calm before another storm
-You have -2 to spend.
+You have 3 to spend.
 What would you like to upgrade?
-player's health = 0
-player's defence is = 0
--5
+This is round 3
+ROUND NUMBER 3
+NUMBER OF ENEMIES 3
+##############################
+PLAYER TURN
+The player rolled a: 3
+you miss the zombie
+The player rolled a: 5
+you successfully attack zombie1
+You killed zombie1
+The player rolled a: 1
+you miss the zombie
+zombie0's health = 3
+zombie0's defence is = 0
+zombie2's health = 3
+zombie2's defence is = 0
+#############################
+ENEMY TURN
+The enemy roles an attack: 6
+the zombie successfully attacks!
+The zombie kills you. You're dead, son!
+Game Over.
+You survived 2 rounds
+Thank you for playing.
