@@ -28,6 +28,20 @@ def endScene(levelValue, textFile):
 	printy("Thank you for playing.", f)
 	quit()
 
+def playerStats(playerObj, textFile):
+	player = playerObj
+	f = textFile
+
+	printy("######################################",f)
+	printy('             PLAYER TURN',f)
+	printy("######################################", f)
+	printy("#           PLAYER STATS             #", f)
+	printy("#------------------------------------#", f)
+	printy("# HEALTH | ATTACK | DEFENCE | SPEED  #", f)
+	printy("#   "+str(player.health)+"    |    "+str(player.attack)+"   |   "+str(player.defence)+"     |   "+str(player.speed)+"    #",f)
+	printy("######################################", f)
+
+
 def printy(text, textFile):
 	print(text)
 	print(text, file=textFile)
@@ -42,9 +56,8 @@ def round(roundNum, playerObj, pointsValue, textFile):
 	printy('NUMBER OF ENEMIES ' + str(len(enemyArray)), f)
 
 	
-
-	printy("##############################",f)
-	printy('PLAYER TURN',f)
+	playerStats(player, f)
+	
 
 	# Initialise target outside of attack loop
 	# This identifies the target in the enemyArray
@@ -62,6 +75,7 @@ def round(roundNum, playerObj, pointsValue, textFile):
 			target = 0
 	
 		roll = die_roll(6)
+		printy("", f)
 		printy("The player rolled a: " + str(roll),f)
 	
 		if (roll > enemyArray[target].defence):
@@ -85,10 +99,13 @@ def round(roundNum, playerObj, pointsValue, textFile):
 		printy(enemy.uid + "'s health = " + str(enemy.health),f)
 		printy(enemy.uid + "'s defence is = " + str(enemy.defence),f)
 
-
-	printy('#############################',f)
-	printy('ENEMY TURN',f)
-
+	printy("", f)
+	printy('######################################',f)
+	printy('             ENEMY TURN',f)
+	printy("######################################", f)
+	printy("#            ENEMY STATS             #", f)
+	printy("#------------------------------------#", f)
+	printy("# NUMBER OF ENEMIES: "+str(len(enemyArray))+"               #", f)
 	if (len(enemyArray) == 0):
 		printy("There are no zombies left to attack you.", f)
 
@@ -106,21 +123,24 @@ def round(roundNum, playerObj, pointsValue, textFile):
 			printy("you fight the zombie off",f)
 			player.defence -= enemy.attack
 	
-	printy("player's health = " + str(player.health),f)
-	printy("player's defence is = " + str(player.defence),f)
 	for enemy in enemyArray:
 		printy(str(enemy.uid) + "'s health = " + str(enemy.health),f)
 	
 
 	return player, points
 
-def round_interval(pointsValue, textFile):
+def round_interval(playerObj, pointsValue, textFile):
+	player = playerObj
 	points = pointsValue
 	f = textFile
 	printy("####################################", f)
 	printy("It's the calm before another storm", f)
 	printy("You have " + str(points) + " to spend.", f)
 	printy("What would you like to upgrade?", f)
+
+	printy("", f)
+	playerStats(player, f)
+	printy("", f)
 	choice = input("> ")
 	if (choice == 'spend'):
 		points -= 1
@@ -130,7 +150,7 @@ def round_interval(pointsValue, textFile):
 def spawn_zombies(number_of_enemies):
 	array_of_zombies = []
 	for i in range(number_of_enemies):
-		uid = 'zombie'+str(i)
+		uid = 'zombie '+str(i+1)
 		zombie = enemy(3,3,3, uid)
 		array_of_zombies.append(zombie)
 	return array_of_zombies

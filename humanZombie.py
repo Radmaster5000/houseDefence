@@ -17,11 +17,15 @@ i = 1
 for rounds in range(0, numOfRounds):
 	
 
-	printy("This is round " + str(i),f)
+	printy("",f)
+	printy("",f)
 	
 	player, points = round(i, player, points, f)
 
-	points = round_interval(points, f)
+	printy("",f)
+	printy("",f)
+
+	points = round_interval(player, points, f)
 
 	i+=1
 
