@@ -25,7 +25,7 @@ for rounds in range(0, numOfRounds):
 	printy("",f)
 	printy("",f)
 
-	points = round_interval(player, points, f)
+	player, points = round_interval(player, points, f)
 
 	i+=1
 

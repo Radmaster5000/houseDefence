@@ -54,6 +54,7 @@ def round(roundNum, playerObj, pointsValue, textFile):
 	enemyArray = spawn_zombies(level)
 	printy('ROUND NUMBER ' + str(level), f)
 	printy('NUMBER OF ENEMIES ' + str(len(enemyArray)), f)
+	printy('POINTS ' + str(points), f)
 
 	
 	playerStats(player, f)
@@ -141,16 +142,34 @@ def round_interval(playerObj, pointsValue, textFile):
 	printy("", f)
 	playerStats(player, f)
 	printy("", f)
-	choice = input("> ")
-	if (choice == 'spend'):
-		points -= 1
+	
+	while (points > 0):
 
-	return points
+		choice = input("> ")
+		if (choice == 'health'):
+			points -= 1
+			player.health += 1
+			playerStats(player, f)
+		elif (choice == 'attack'):
+			points -= 1
+			player.attack += 1
+			playerStats(player, f)
+		elif (choice == 'defence'):
+			points -= 1
+			player.defence += 1
+			playerStats(player, f)
+		elif (choice == 'speed'):
+			points -= 1
+			player.speed += 1
+			playerStats(player, f)
+		else:
+			return player, points
+	return player, points		
 
 def spawn_zombies(number_of_enemies):
 	array_of_zombies = []
 	for i in range(number_of_enemies):
 		uid = 'zombie '+str(i+1)
-		zombie = enemy(3,3,3, uid)
+		zombie = enemy(3,1,3, uid)
 		array_of_zombies.append(zombie)
 	return array_of_zombies
