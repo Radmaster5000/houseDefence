@@ -12,7 +12,10 @@ POINTS 0
 #   3    |    3   |   3     |   3    #
 ######################################
 
-The player rolled a: 5
+The player rolled a: 2
+you miss the zombie
+
+The player rolled a: 1
 you successfully attack zombie 1
 You killed zombie 1
 Congrats! You killed all the zombies
@@ -40,27 +43,113 @@ What would you like to upgrade?
 #   3    |    3   |   3     |   3    #
 ######################################
 
-
-
-ROUND NUMBER 2
-NUMBER OF ENEMIES 2
-POINTS 1
 ######################################
              PLAYER TURN
 ######################################
 #           PLAYER STATS             #
 #------------------------------------#
 # HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
+#   3    |    3   |   3     |   4    #
+######################################
+
+
+ROUND NUMBER 2
+NUMBER OF ENEMIES 2
+POINTS 0
+######################################
+             PLAYER TURN
+######################################
+#           PLAYER STATS             #
+#------------------------------------#
+# HEALTH | ATTACK | DEFENCE | SPEED  #
+#   3    |    3   |   3     |   4    #
+######################################
+
+The player rolled a: 2
+you miss the zombie
+
+The player rolled a: 0
+you miss the zombie
+
+The player rolled a: 4
+you successfully attack zombie 1
+You killed zombie 1
+
+The player rolled a: 6
+you successfully attack zombie 2
+You killed zombie 2
+Congrats! You killed all the zombies
+
+######################################
+             ENEMY TURN
+######################################
+#            ENEMY STATS             #
+#------------------------------------#
+# NUMBER OF ENEMIES: 0               #
+There are no zombies left to attack you.
+
+
+####################################
+It's the calm before another storm
+You have 2 to spend.
+What would you like to upgrade?
+
+######################################
+             PLAYER TURN
+######################################
+#           PLAYER STATS             #
+#------------------------------------#
+# HEALTH | ATTACK | DEFENCE | SPEED  #
+#   3    |    3   |   3     |   4    #
+######################################
+
+######################################
+             PLAYER TURN
+######################################
+#           PLAYER STATS             #
+#------------------------------------#
+# HEALTH | ATTACK | DEFENCE | SPEED  #
+#   3    |    3   |   3     |   5    #
+######################################
+######################################
+             PLAYER TURN
+######################################
+#           PLAYER STATS             #
+#------------------------------------#
+# HEALTH | ATTACK | DEFENCE | SPEED  #
+#   3    |    3   |   3     |   6    #
+######################################
+
+
+ROUND NUMBER 3
+NUMBER OF ENEMIES 3
+POINTS 0
+######################################
+             PLAYER TURN
+######################################
+#           PLAYER STATS             #
+#------------------------------------#
+# HEALTH | ATTACK | DEFENCE | SPEED  #
+#   3    |    3   |   3     |   6    #
 ######################################
 
 The player rolled a: 6
 you successfully attack zombie 1
 You killed zombie 1
 
+The player rolled a: 2
+you miss the zombie
+
+The player rolled a: 3
+you miss the zombie
+
 The player rolled a: 5
 you successfully attack zombie 2
 You killed zombie 2
+
+The player rolled a: 4
+you successfully attack zombie 3
+You killed zombie 3
 Congrats! You killed all the zombies
 
 ######################################
@@ -83,13 +172,13 @@ What would you like to upgrade?
 #           PLAYER STATS             #
 #------------------------------------#
 # HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
+#   3    |    3   |   3     |   6    #
 ######################################
 
 
 
-ROUND NUMBER 3
-NUMBER OF ENEMIES 3
+ROUND NUMBER 4
+NUMBER OF ENEMIES 4
 POINTS 3
 ######################################
              PLAYER TURN
@@ -97,36 +186,44 @@ POINTS 3
 #           PLAYER STATS             #
 #------------------------------------#
 # HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
+#   3    |    3   |   3     |   6    #
 ######################################
 
-The player rolled a: 4
+The player rolled a: 1
+you miss the zombie
+
+The player rolled a: 1
+you miss the zombie
+
+The player rolled a: 5
+you successfully attack zombie 3
+You killed zombie 3
+
+The player rolled a: 5
+you successfully attack zombie 4
+You killed zombie 4
+
+The player rolled a: 1
 you successfully attack zombie 1
 You killed zombie 1
 
-The player rolled a: 5
+The player rolled a: 4
 you successfully attack zombie 2
 You killed zombie 2
-
-The player rolled a: 0
-you miss the zombie
-zombie 3's health = 3
-zombie 3's defence is = 0
+Congrats! You killed all the zombies
 
 ######################################
              ENEMY TURN
 ######################################
 #            ENEMY STATS             #
 #------------------------------------#
-# NUMBER OF ENEMIES: 1               #
-The enemy roles an attack: 6
-the zombie successfully attacks!
-zombie 3's health = 3
+# NUMBER OF ENEMIES: 0               #
+There are no zombies left to attack you.
 
 
 ####################################
 It's the calm before another storm
-You have 5 to spend.
+You have 7 to spend.
 What would you like to upgrade?
 
 ######################################
@@ -135,49 +232,65 @@ What would you like to upgrade?
 #           PLAYER STATS             #
 #------------------------------------#
 # HEALTH | ATTACK | DEFENCE | SPEED  #
-#   2    |    3   |   3     |   3    #
+#   3    |    3   |   3     |   6    #
 ######################################
 
+
+
+ROUND NUMBER 5
+NUMBER OF ENEMIES 5
+POINTS 7
 ######################################
              PLAYER TURN
 ######################################
 #           PLAYER STATS             #
 #------------------------------------#
 # HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
+#   3    |    3   |   3     |   6    #
 ######################################
+
+The player rolled a: 3
+you miss the zombie
+
+The player rolled a: 2
+you miss the zombie
+
+The player rolled a: 3
+you miss the zombie
+
+The player rolled a: 0
+you miss the zombie
+
+The player rolled a: 2
+you miss the zombie
+
+The player rolled a: 5
+you successfully attack zombie 1
+You killed zombie 1
+zombie 2's health = 3
+zombie 2's defence is = 0
+zombie 3's health = 3
+zombie 3's defence is = 0
+zombie 4's health = 3
+zombie 4's defence is = 0
+zombie 5's health = 3
+zombie 5's defence is = 0
+
 ######################################
-             PLAYER TURN
+             ENEMY TURN
 ######################################
-#           PLAYER STATS             #
+#            ENEMY STATS             #
 #------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   4    |    3   |   3     |   3    #
-######################################
-######################################
-             PLAYER TURN
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   5    |    3   |   3     |   3    #
-######################################
-######################################
-             PLAYER TURN
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   5    |    4   |   3     |   3    #
-######################################
-######################################
-             PLAYER TURN
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   5    |    4   |   3     |   4    #
-######################################
-player's health = 5
-player's defence is = 3
-0
+# NUMBER OF ENEMIES: 4               #
+The enemy roles an attack: 4
+the zombie successfully attacks!
+The enemy roles an attack: 4
+the zombie successfully attacks!
+The enemy roles an attack: 1
+you fight the zombie off
+The enemy roles an attack: 4
+the zombie successfully attacks!
+The zombie kills you. You're dead, son!
+Game Over.
+You survived 4 rounds
+Thank you for playing.

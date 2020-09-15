@@ -14,7 +14,7 @@ player = human(3,3,3,3)
 numOfRounds = 3
 i = 1
 
-for rounds in range(0, numOfRounds):
+while (player.health > 0):
 	
 
 	printy("",f)
