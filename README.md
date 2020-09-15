@@ -17,10 +17,10 @@ At the end of each round, player can choose to upgrade their stats by spending t
 
 
 <ul>
-	<li>~~Implement an upgrade system~~</li>
+	<s>Implement an upgrade system</s>
 		<li>Clean up upgrade system (catching misspellings, etc)</li>
-	<li>~~Implement a proper end-game. (player is currently invincible)~~</li>
-		<li>~~Implement a proper game loop. Number of rounds is currently hard-coded~~</li>
+	<s>Implement a proper end-game. (player is currently invincible)</s>
+		<s>Implement a proper game loop. Number of rounds is currently hard-coded</s>
 	<li>Implement a way of saving multiple games to the text log (possibly make a folder to save old games)</li>
 	<li>Tidy up the text</li>
 </ul>
