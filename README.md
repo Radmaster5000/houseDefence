@@ -6,7 +6,10 @@ Added a custom print function that will print to the console and also save the o
 
 ************************
 
-UPDATE: 14/09/20
+UPDATE: 16/09/20
+
+Added a safehouse. This acts as the first line of defence for the player. The zombies will attack the safehouse before they attack the player. 
+
 Most of the basics are working. Player fights zombies with random levels of sucess. Starts with one zombie, increasing by one each round. If the player kills a zombie, they earn a point. 
 
 At the end of each round, player can choose to upgrade their stats by spending the points they've earned. 
@@ -17,10 +20,9 @@ At the end of each round, player can choose to upgrade their stats by spending t
 
 
 <ul>
-	<s>Implement an upgrade system</s>
-		<li>Clean up upgrade system (catching misspellings, etc)</li>
-	<s>Implement a proper end-game. (player is currently invincible)</s>
-		<s>Implement a proper game loop. Number of rounds is currently hard-coded</s>
+	<li>Clean up upgrade system (catching misspellings, etc)</li>
+	<li>Allow the safehouse to be upgraded as well as the player</li>
+	<li>Implement a command list so the player can take a more active role</li>
 	<li>Implement a way of saving multiple games to the text log (possibly make a folder to save old games)</li>
 	<li>Tidy up the text</li>
 </ul>
