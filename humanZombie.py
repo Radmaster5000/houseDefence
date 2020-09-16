@@ -10,6 +10,7 @@ f = open("gameLog.txt", "w")
 
 points = 0
 player = human(3,3,3,3)
+safehouse = building(3,3,3)
 
 numOfRounds = 3
 i = 1
@@ -20,12 +21,12 @@ while (player.health > 0):
 	printy("",f)
 	printy("",f)
 	
-	player, points = round(i, player, points, f)
+	safehouse, player, points = round(i, safehouse, player, points, f)
 
 	printy("",f)
 	printy("",f)
 
-	player, points = round_interval(player, points, f)
+	safehouse, player, points = round_interval(safehouse, player, points, f)
 
 	i+=1
 

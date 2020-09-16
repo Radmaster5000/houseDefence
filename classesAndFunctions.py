@@ -1,6 +1,12 @@
 #created in anticipation of creating players with different stats
 import random
 
+class building:
+	def __init__(self, health, attack, defence):
+		self.health = health
+		self.attack = attack
+		self.defence = defence
+
 class human:
 	
 	def __init__(self, health, attack, defence, speed):
@@ -28,12 +34,23 @@ def endScene(levelValue, textFile):
 	printy("Thank you for playing.", f)
 	quit()
 
+def houseStats(safehouseObj, textFile):
+	safehouse = safehouseObj
+	f = textFile
+
+	printy("######################################", f)
+	printy("#        SAFEHOUSE STATS             #", f)
+	printy("#------------------------------------#", f)
+	printy("#   HEALTH  |   ATTACK  |   DEFENCE  #", f)
+	printy("#     "+str(safehouse.health)+"     |      "+str(safehouse.attack)+"    |     "+str(safehouse.defence)+"      #",f)
+	printy("######################################", f)
+
+
 def playerStats(playerObj, textFile):
 	player = playerObj
 	f = textFile
 
-	printy("######################################",f)
-	printy('             PLAYER TURN',f)
+
 	printy("######################################", f)
 	printy("#           PLAYER STATS             #", f)
 	printy("#------------------------------------#", f)
@@ -46,8 +63,9 @@ def printy(text, textFile):
 	print(text)
 	print(text, file=textFile)
 
-def round(roundNum, playerObj, pointsValue, textFile):
+def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 	level = roundNum
+	safehouse = safehouseObj
 	player = playerObj
 	points = pointsValue
 	f = textFile
@@ -56,7 +74,8 @@ def round(roundNum, playerObj, pointsValue, textFile):
 	printy('NUMBER OF ENEMIES ' + str(len(enemyArray)), f)
 	printy('POINTS ' + str(points), f)
 
-	
+	printy("######################################",f)
+	printy('             PLAYER TURN',f)
 	playerStats(player, f)
 	
 
@@ -109,28 +128,37 @@ def round(roundNum, playerObj, pointsValue, textFile):
 	printy("# NUMBER OF ENEMIES: "+str(len(enemyArray))+"               #", f)
 	if (len(enemyArray) == 0):
 		printy("There are no zombies left to attack you.", f)
-
-	for enemy in enemyArray:
-		roll = die_roll(6)
-		printy("The enemy roles an attack: " + str(roll),f)
+	else:	
+		for enemy in enemyArray:
+			roll = die_roll(6)
+			printy("The enemy roles an attack: " + str(roll),f)
+			if (safehouse.health >0):
+				# zombie attacks the safehouse
+				if (roll > safehouse.defence):
+					printy("the zombie successfully attacks!",f)
+					safehouse.health -= enemy.attack
+				else:
+					printy("The house's defences fight off the zombie",f)
+					safehouse.defence -= enemy.attack
+			else:
+				if (roll > player.defence):
+					printy("the zombie successfully attacks!",f)
+					player.health -= enemy.attack
+					if (player.health <= 0):
+						printy("The zombie kills you. You're dead, son!", f)
+						endScene(level, f)
+				else:
+					printy("you fight the zombie off",f)
+					player.defence -= enemy.attack
+		
+		for enemy in enemyArray:
+			printy(str(enemy.uid) + "'s health = " + str(enemy.health),f)
 	
-		if (roll > player.defence):
-			printy("the zombie successfully attacks!",f)
-			player.health -= enemy.attack
-			if (player.health <= 0):
-				printy("The zombie kills you. You're dead, son!", f)
-				endScene(level, f)
-		else:
-			printy("you fight the zombie off",f)
-			player.defence -= enemy.attack
-	
-	for enemy in enemyArray:
-		printy(str(enemy.uid) + "'s health = " + str(enemy.health),f)
-	
 
-	return player, points
+	return safehouse, player, points
 
-def round_interval(playerObj, pointsValue, textFile):
+def round_interval(safehouseObj, playerObj, pointsValue, textFile):
+	safehouse = safehouseObj
 	player = playerObj
 	points = pointsValue
 	f = textFile
@@ -141,6 +169,7 @@ def round_interval(playerObj, pointsValue, textFile):
 
 	printy("", f)
 	playerStats(player, f)
+	houseStats(safehouse, f)
 	printy("", f)
 	
 	while (points > 0):
@@ -163,8 +192,8 @@ def round_interval(playerObj, pointsValue, textFile):
 			player.speed += 1
 			playerStats(player, f)
 		else:
-			return player, points
-	return player, points		
+			return safehouse, player, points
+	return safehouse, player, points		
 
 def spawn_zombies(number_of_enemies):
 	array_of_zombies = []
