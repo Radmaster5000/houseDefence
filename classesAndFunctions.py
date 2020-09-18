@@ -126,6 +126,7 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 	printy("#            ENEMY STATS             #", f)
 	printy("#------------------------------------#", f)
 	printy("# NUMBER OF ENEMIES: "+str(len(enemyArray))+"               #", f)
+	printy("######################################", f)
 	if (len(enemyArray) == 0):
 		printy("There are no zombies left to attack you.", f)
 	else:	
@@ -135,14 +136,16 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 			if (safehouse.health >0):
 				# zombie attacks the safehouse
 				if (roll > safehouse.defence):
-					printy("the zombie successfully attacks!",f)
+					printy("the zombie successfully attacks the safehouse!",f)
 					safehouse.health -= enemy.attack
+					if (safehouse.health <= 0):
+						printy("Your safehouse is compromised. The zombies are getting in!")
 				else:
 					printy("The house's defences fight off the zombie",f)
 					safehouse.defence -= enemy.attack
 			else:
 				if (roll > player.defence):
-					printy("the zombie successfully attacks!",f)
+					printy("the zombie successfully attacks you!",f)
 					player.health -= enemy.attack
 					if (player.health <= 0):
 						printy("The zombie kills you. You're dead, son!", f)
@@ -174,6 +177,8 @@ def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 	
 	while (points > 0):
 
+		#create a parser that will separate building and player stats
+
 		choice = input("> ")
 		if (choice == 'health'):
 			points -= 1
@@ -191,6 +196,18 @@ def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 			points -= 1
 			player.speed += 1
 			playerStats(player, f)
+		elif (choice == 'safehouse health'):
+			points -= 1
+			safehouse.health += 1
+			houseStats(safehouse, f)
+		elif (choice == 'safehouse attack'):
+			points -= 1
+			safehouse.attack += 1
+			houseStats(safehouse, f)
+		elif (choice == 'safehouse defence'):
+			points -= 1
+			safehouse.defence += 1
+			houseStats(safehouse, f)
 		else:
 			return safehouse, player, points
 	return safehouse, player, points		

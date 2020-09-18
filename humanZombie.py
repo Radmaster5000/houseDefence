@@ -12,7 +12,7 @@ points = 0
 player = human(3,3,3,3)
 safehouse = building(3,3,3)
 
-numOfRounds = 3
+
 i = 1
 
 while (player.health > 0):
