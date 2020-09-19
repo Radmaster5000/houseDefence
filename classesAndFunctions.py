@@ -34,6 +34,20 @@ def endScene(levelValue, textFile):
 	printy("Thank you for playing.", f)
 	quit()
 
+def enemyStats(enemyArray, textFile):
+	enemyArray = enemyArray
+	f = textFile
+
+	printy("", f)
+	printy('######################################',f)
+	printy('             ENEMY TURN',f)
+	printy("######################################", f)
+	printy("#            ENEMY STATS             #", f)
+	printy("#------------------------------------#", f)
+	printy("# NUMBER OF ENEMIES: "+str(len(enemyArray))+"               #", f)
+	printy("######################################", f)
+
+
 def houseStats(safehouseObj, textFile):
 	safehouse = safehouseObj
 	f = textFile
@@ -112,21 +126,14 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 		else:
 			printy("you miss the zombie",f)
 			enemyArray[target].defence -= player.attack
-
+	enemyStats(enemyArray, f)
 		# Increment variable to target the next enemy in the array
-		target += 1
+	target += 1
 	for enemy in enemyArray:	
 		printy(enemy.uid + "'s health = " + str(enemy.health),f)
 		printy(enemy.uid + "'s defence is = " + str(enemy.defence),f)
 
-	printy("", f)
-	printy('######################################',f)
-	printy('             ENEMY TURN',f)
-	printy("######################################", f)
-	printy("#            ENEMY STATS             #", f)
-	printy("#------------------------------------#", f)
-	printy("# NUMBER OF ENEMIES: "+str(len(enemyArray))+"               #", f)
-	printy("######################################", f)
+
 	if (len(enemyArray) == 0):
 		printy("There are no zombies left to attack you.", f)
 	else:	
