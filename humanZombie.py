@@ -12,7 +12,7 @@ points = 0
 player = human(3,3,3,3)
 safehouse = building(3,3,3)
 
-
+oldEnemyArray = []
 i = 1
 
 while (player.health > 0):
@@ -21,7 +21,7 @@ while (player.health > 0):
 	printy("",f)
 	printy("",f)
 	
-	safehouse, player, points = round(i, safehouse, player, points, f)
+	safehouse, player, oldEnemyArray, points = round(i, safehouse, player, oldEnemyArray, points, f)
 
 	printy("",f)
 	printy("",f)

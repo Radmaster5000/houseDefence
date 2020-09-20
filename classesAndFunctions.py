@@ -77,13 +77,19 @@ def printy(text, textFile):
 	print(text)
 	print(text, file=textFile)
 
-def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
+def round(roundNum, safehouseObj, playerObj, oldEnemyArray, pointsValue, textFile):
 	level = roundNum
 	safehouse = safehouseObj
 	player = playerObj
+	oldEnemyArray = oldEnemyArray
 	points = pointsValue
 	f = textFile
+	
+	# create the enemies for this round and add any surviving enemies from the last round
 	enemyArray = spawn_zombies(level)
+	for enemy in oldEnemyArray:
+		enemyArray.append(enemy)
+
 	printy('ROUND NUMBER ' + str(level), f)
 	printy('NUMBER OF ENEMIES ' + str(len(enemyArray)), f)
 	printy('POINTS ' + str(points), f)
@@ -99,19 +105,16 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 
 	for turns in range(0, player.speed):
 		
-		#if (len(enemyArray) == 0):
-			# THIS NEEDS CHANGING. WILL REPEAT FOR PLAYER'S SPEED EVEN IF ARRAY IS EMPTY
-		#	print("Congrats! You killed all the zombies")
-		#else:	
 		
-			# It the target variable reaches the end of the array, reset it
+		# It the target variable reaches the end of the array, reset it
 		if (target >= len(enemyArray)):
 			target = 0
 	
 		roll = die_roll(6)
 		printy("", f)
 		printy("The player rolled a: " + str(roll),f)
-	
+
+		# if the player rolls higher than the enemy's defence, they attack
 		if (roll > enemyArray[target].defence):
 			printy("you successfully attack " + enemyArray[target].uid,f)
 			enemyArray[target].health -= player.attack
@@ -123,11 +126,15 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 					printy("Congrats! You killed all the zombies", f)
 					break
 				target -= 1
+	
+		# if the player rolls lower than the enemy's defence, the attack deplete's the enemy's defence stat
 		else:
 			printy("you miss the zombie",f)
 			enemyArray[target].defence -= player.attack
+	
 	enemyStats(enemyArray, f)
-		# Increment variable to target the next enemy in the array
+	
+	# Increment variable to target the next enemy in the array
 	target += 1
 	for enemy in enemyArray:	
 		printy(enemy.uid + "'s health = " + str(enemy.health),f)
@@ -146,7 +153,7 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 					printy("the zombie successfully attacks the safehouse!",f)
 					safehouse.health -= enemy.attack
 					if (safehouse.health <= 0):
-						printy("Your safehouse is compromised. The zombies are getting in!")
+						printy("Your safehouse is compromised. The zombies are getting in!",f)
 				else:
 					printy("The house's defences fight off the zombie",f)
 					safehouse.defence -= enemy.attack
@@ -165,7 +172,7 @@ def round(roundNum, safehouseObj, playerObj, pointsValue, textFile):
 			printy(str(enemy.uid) + "'s health = " + str(enemy.health),f)
 	
 
-	return safehouse, player, points
+	return safehouse, player, enemyArray, points
 
 def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 	safehouse = safehouseObj
@@ -220,9 +227,10 @@ def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 	return safehouse, player, points		
 
 def spawn_zombies(number_of_enemies):
+
 	array_of_zombies = []
 	for i in range(number_of_enemies):
-		uid = 'zombie '+str(i+1)
+		uid = '<zombie '+str(number_of_enemies)+'/'+str(i+1)+'>'
 		zombie = enemy(3,1,3, uid)
 		array_of_zombies.append(zombie)
 	return array_of_zombies
