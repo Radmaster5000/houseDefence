@@ -18,4 +18,23 @@ string14 = 'SAFEHOUSEDEFENCE'
 
 p = re.compile('player')
 s = re.compile('safehouse')
+safehouseStat = re.compile('(s\w+)\s(\w)', re.IGNORECASE)
+
+#attempt to parse any input
+twoWordInput = re.compile('(\w+)\s(\w+)', re.IGNORECASE)
+
+
+
+# if the player's input is saved as choice
+# example... choice = 'player strength'
+
+grouped = twoWordInput.match(choice)
+
+
+grouped.group() # 'player strength'
+grouped.group(1) # 'player'
+grouped.group(2) # 'strength'
+
+
+
 

@@ -6,6 +6,14 @@ Added a custom print function that will print to the console and also save the o
 
 ************************
 
+UPDATE: 23/09/20
+
+Currently playing with regex and parsing the player's inputs when upgrading. Probably not going to look like I'm doing much for a while as I try to get my head round this.
+
+
+***************
+
+
 UPDATE: 16/09/20
 
 Added a safehouse. This acts as the first line of defence for the player. The zombies will attack the safehouse before they attack the player. 
