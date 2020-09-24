@@ -28,13 +28,19 @@ twoWordInput = re.compile('(\w+)\s(\w+)', re.IGNORECASE)
 # if the player's input is saved as choice
 # example... choice = 'player strength'
 
-grouped = twoWordInput.match(choice)
+parsed = twoWordInput.match(choice)
 
 
-grouped.group() # 'player strength'
-grouped.group(1) # 'player'
-grouped.group(2) # 'strength'
+parsed.group() # 'player strength'
+parsed.group(1) # 'player'
+parsed.group(2) # 'strength'
 
+if (parsed.group(1) == 'player'):
+	# branch player options
+elif (parsed.group(1) == 'safehouse'):
+	# branch safehouse options
+else:
+	# print error message and re-loop
 
 
 
