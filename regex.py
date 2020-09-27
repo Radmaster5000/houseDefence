@@ -16,8 +16,13 @@ string12 = 'Safehouse Defence'
 string13 = 'SafehouseDefence'
 string14 = 'SAFEHOUSEDEFENCE'
 
-p = re.compile('player')
-s = re.compile('safehouse')
+pl = re.compile('player', re.IGNORECASE)
+sa = re.compile('safehouse', re.IGNORECASE)
+he = re.compile('health', re.IGNORECASE)
+at = re.compile('attack', re.IGNORECASE)
+de = re.compile('defence', re.IGNORECASE) 
+sp = re.compile('speed', re.IGNORECASE) 
+
 safehouseStat = re.compile('(s\w+)\s(\w)', re.IGNORECASE)
 
 #attempt to parse any input
@@ -29,43 +34,43 @@ twoWordInput = re.compile('(\w+)\s(\w+)', re.IGNORECASE)
 # example... choice = 'player strength'
 choice = string4
 
-parsed = twoWordInput.match(choice)
+parsed = twoWordInput.match('PLAYER ATTACK')
 
 
 parsed.group() # 'player strength'
 parsed.group(1) # 'player'
 parsed.group(2) # 'strength'
 
-if (parsed.group(1) == 'player'):
-	if (parsed.group(2) == 'health'):
+if (pl.match(parsed.group(1))):
+	if (he.match(parsed.group(2))):
 		print('increased player health')
 		print('decrement points')
 		print('print player stats')
-	elif (parsed.group(2) == 'attack'):
+	elif (at.match(parsed.group(2))):
 		print('increased player attack')
 		print('decrement points')
 		print('print player stats')
-	elif (parsed.group(2) == 'defence'):
+	elif (de.match(parsed.group(2))):
 		print('increased player defence')
 		print('decrement points')
 		print('print player stats')
-	elif (parsed.group(2) == 'speed'):
+	elif (sp.match(parsed.group(2))):
 		print('increased player speed')
 		print('decrement points')
 		print('print player stats')
 	else:
 		print('re-loop player')
 		# print error message and re-loop
-elif (parsed.group(1) == 'safehouse'):
-	if (parsed.group(2) == 'health'):
+elif (sa.match(parsed.group(1))):
+	if (he.match(parsed.group(2))):
 		print('increased safehouse health')
 		print('decrement points')
 		print('print safehouse stats')
-	elif (parsed.group(2) == 'attack'):
+	elif (at.match(parsed.group(2))):
 		print('increased safehouse attack')
 		print('decrement points')
 		print('print safehouse stats')
-	elif (parsed.group(2) == 'defence'):
+	elif (de.match(parsed.group(2))):
 		print('increased safehouse defence')
 		print('decrement points')
 		print('print safehouse stats')
