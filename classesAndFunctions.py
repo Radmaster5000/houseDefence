@@ -1,5 +1,13 @@
 #created in anticipation of creating players with different stats
-import random
+import random, re
+
+pl = re.compile('player', re.IGNORECASE)
+sa = re.compile('safehouse', re.IGNORECASE)
+he = re.compile('health', re.IGNORECASE)
+at = re.compile('attack', re.IGNORECASE)
+de = re.compile('defence', re.IGNORECASE) 
+sp = re.compile('speed', re.IGNORECASE) 
+twoWordInput = re.compile('(\w+)\s(\w+)', re.IGNORECASE)
 
 class building:
 	def __init__(self, health, attack, defence):
@@ -194,36 +202,63 @@ def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 		#create a parser that will separate building and player stats
 
 		choice = input("> ")
-		if (choice == 'health'):
-			points -= 1
-			player.health += 1
-			playerStats(player, f)
-		elif (choice == 'attack'):
-			points -= 1
-			player.attack += 1
-			playerStats(player, f)
-		elif (choice == 'defence'):
-			points -= 1
-			player.defence += 1
-			playerStats(player, f)
-		elif (choice == 'speed'):
-			points -= 1
-			player.speed += 1
-			playerStats(player, f)
-		elif (choice == 'safehouse health'):
-			points -= 1
-			safehouse.health += 1
-			houseStats(safehouse, f)
-		elif (choice == 'safehouse attack'):
-			points -= 1
-			safehouse.attack += 1
-			houseStats(safehouse, f)
-		elif (choice == 'safehouse defence'):
-			points -= 1
-			safehouse.defence += 1
-			houseStats(safehouse, f)
+
+		if (len(choice) > 0):
+
+			parsed = twoWordInput.match(choice)
+
+			if (pl.match(parsed.group(1))):
+				objVar = player
+			elif (sa.match(parsed.group(1))):
+				objVar = safehouse
+
+			if (he.match(parsed.group(2))):
+				objVar.health += 1
+			elif (at.match(parsed.group(2))):
+				objVar.attack += 1
+			elif (de.match(parsed.group(2))):
+				objVar.defence += 1
+			elif (sp.match(parsed.group(2))):
+				objVar.speed += 1
 		else:
 			return safehouse, player, points
+		
+		points -= 1
+		playerStats(objVar, f)
+		houseStats(objVar, f)
+
+
+		# if (choice == 'health'):
+		# 	points -= 1
+		# 	player.health += 1
+		# 	playerStats(player, f)
+		# elif (choice == 'attack'):
+		# 	points -= 1
+		# 	player.attack += 1
+		# 	playerStats(player, f)
+		# elif (choice == 'defence'):
+		# 	points -= 1
+		# 	player.defence += 1
+		# 	playerStats(player, f)
+		# elif (choice == 'speed'):
+		# 	points -= 1
+		# 	player.speed += 1
+		# 	playerStats(player, f)
+		# elif (choice == 'safehouse health'):
+		# 	points -= 1
+		# 	safehouse.health += 1
+		# 	houseStats(safehouse, f)
+		# elif (choice == 'safehouse attack'):
+		# 	points -= 1
+		# 	safehouse.attack += 1
+		# 	houseStats(safehouse, f)
+		# elif (choice == 'safehouse defence'):
+		# 	points -= 1
+		# 	safehouse.defence += 1
+		# 	houseStats(safehouse, f)
+		# else:
+		# 	return safehouse, player, points
+
 	return safehouse, player, points		
 
 def spawn_zombies(number_of_enemies):

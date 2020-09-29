@@ -1,6 +1,14 @@
 import random
 from classesAndFunctions import *
 
+
+####################################
+#        INITIALIZING STUFF        #
+####################################
+
+
+
+
 # opens the game log text file where each move will be copied down
 # currently opens with "w", so overwrites the last session
 # look at using "a" to append the file but stamp each session with a date/time at this point 

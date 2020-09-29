@@ -59,14 +59,14 @@ POINTS 1
 #   3    |    3   |   3     |   3    #
 ######################################
 
-The player rolled a: 2
+The player rolled a: 3
 you miss the zombie
 
-The player rolled a: 3
+The player rolled a: 4
 you successfully attack <zombie 2/1>
 You killed <zombie 2/1>
 
-The player rolled a: 0
+The player rolled a: 3
 you miss the zombie
 
 ######################################
@@ -78,7 +78,7 @@ you miss the zombie
 ######################################
 <zombie 2/2>'s health = 3
 <zombie 2/2>'s defence is = 0
-The enemy roles an attack: 2
+The enemy roles an attack: 1
 The house's defences fight off the zombie
 <zombie 2/2>'s health = 3
 
@@ -115,16 +115,16 @@ POINTS 2
 #   3    |    3   |   3     |   3    #
 ######################################
 
+The player rolled a: 1
+you miss the zombie
+
 The player rolled a: 4
 you successfully attack <zombie 3/1>
 You killed <zombie 3/1>
 
-The player rolled a: 3
+The player rolled a: 2
 you successfully attack <zombie 2/2>
 You killed <zombie 2/2>
-
-The player rolled a: 2
-you miss the zombie
 
 ######################################
              ENEMY TURN
@@ -134,12 +134,12 @@ you miss the zombie
 # NUMBER OF ENEMIES: 2               #
 ######################################
 <zombie 3/2>'s health = 3
-<zombie 3/2>'s defence is = 0
+<zombie 3/2>'s defence is = 3
 <zombie 3/3>'s health = 3
 <zombie 3/3>'s defence is = 3
 The enemy roles an attack: 0
 The house's defences fight off the zombie
-The enemy roles an attack: 5
+The enemy roles an attack: 4
 the zombie successfully attacks the safehouse!
 <zombie 3/2>'s health = 3
 <zombie 3/3>'s health = 3
@@ -163,169 +163,3 @@ What would you like to upgrade?
 #     2     |      3    |     1      #
 ######################################
 
-######################################
-#        SAFEHOUSE STATS             #
-#------------------------------------#
-#   HEALTH  |   ATTACK  |   DEFENCE  #
-#     3     |      3    |     1      #
-######################################
-######################################
-#        SAFEHOUSE STATS             #
-#------------------------------------#
-#   HEALTH  |   ATTACK  |   DEFENCE  #
-#     3     |      3    |     2      #
-######################################
-######################################
-#        SAFEHOUSE STATS             #
-#------------------------------------#
-#   HEALTH  |   ATTACK  |   DEFENCE  #
-#     3     |      3    |     3      #
-######################################
-######################################
-#        SAFEHOUSE STATS             #
-#------------------------------------#
-#   HEALTH  |   ATTACK  |   DEFENCE  #
-#     3     |      3    |     4      #
-######################################
-
-
-ROUND NUMBER 4
-NUMBER OF ENEMIES 6
-POINTS 0
-######################################
-             PLAYER TURN
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
-######################################
-
-The player rolled a: 1
-you miss the zombie
-
-The player rolled a: 4
-you successfully attack <zombie 4/1>
-You killed <zombie 4/1>
-
-The player rolled a: 6
-you successfully attack <zombie 3/3>
-You killed <zombie 3/3>
-
-######################################
-             ENEMY TURN
-######################################
-#            ENEMY STATS             #
-#------------------------------------#
-# NUMBER OF ENEMIES: 4               #
-######################################
-<zombie 4/2>'s health = 3
-<zombie 4/2>'s defence is = 3
-<zombie 4/3>'s health = 3
-<zombie 4/3>'s defence is = 3
-<zombie 4/4>'s health = 3
-<zombie 4/4>'s defence is = 3
-<zombie 3/2>'s health = 3
-<zombie 3/2>'s defence is = 0
-The enemy roles an attack: 6
-the zombie successfully attacks the safehouse!
-The enemy roles an attack: 3
-The house's defences fight off the zombie
-The enemy roles an attack: 1
-The house's defences fight off the zombie
-The enemy roles an attack: 0
-The house's defences fight off the zombie
-<zombie 4/2>'s health = 3
-<zombie 4/3>'s health = 3
-<zombie 4/4>'s health = 3
-<zombie 3/2>'s health = 3
-
-
-####################################
-It's the calm before another storm
-You have 2 to spend.
-What would you like to upgrade?
-
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   3    #
-######################################
-######################################
-#        SAFEHOUSE STATS             #
-#------------------------------------#
-#   HEALTH  |   ATTACK  |   DEFENCE  #
-#     2     |      3    |     1      #
-######################################
-
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   4    #
-######################################
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   5    #
-######################################
-
-
-ROUND NUMBER 5
-NUMBER OF ENEMIES 9
-POINTS 0
-######################################
-             PLAYER TURN
-######################################
-#           PLAYER STATS             #
-#------------------------------------#
-# HEALTH | ATTACK | DEFENCE | SPEED  #
-#   3    |    3   |   3     |   5    #
-######################################
-
-The player rolled a: 5
-you successfully attack <zombie 5/1>
-You killed <zombie 5/1>
-
-The player rolled a: 6
-you successfully attack <zombie 3/2>
-You killed <zombie 3/2>
-
-The player rolled a: 5
-you successfully attack <zombie 4/3>
-You killed <zombie 4/3>
-
-The player rolled a: 6
-you successfully attack <zombie 5/5>
-You killed <zombie 5/5>
-
-The player rolled a: 1
-you miss the zombie
-
-######################################
-             ENEMY TURN
-######################################
-#            ENEMY STATS             #
-#------------------------------------#
-# NUMBER OF ENEMIES: 5               #
-######################################
-<zombie 5/2>'s health = 3
-<zombie 5/2>'s defence is = 3
-<zombie 5/3>'s health = 3
-<zombie 5/3>'s defence is = 0
-<zombie 5/4>'s health = 3
-<zombie 5/4>'s defence is = 3
-<zombie 4/2>'s health = 3
-<zombie 4/2>'s defence is = 3
-<zombie 4/4>'s health = 3
-<zombie 4/4>'s defence is = 3
-The enemy roles an attack: 0
-The house's defences fight off the zombie
-The enemy roles an attack: 0
-The house's defences fight off the zombie
-The enemy roles an attack: 5
-the zombie successfully attacks the safehouse!
-The enemy roles an attack: 6
-the zombie successfully attacks the safehouse!
