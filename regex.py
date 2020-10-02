@@ -1,5 +1,7 @@
 import re
 
+# need to catch single word as input, eg 'speed', or 'player'
+
 class building:
 	def __init__(self, health, attack, defence):
 		self.health = health

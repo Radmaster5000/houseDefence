@@ -113,32 +113,34 @@ def round(roundNum, safehouseObj, playerObj, oldEnemyArray, pointsValue, textFil
 
 	for turns in range(0, player.speed):
 		
+		try:
+			# It the target variable reaches the end of the array, reset it
+			if (target >= len(enemyArray)):
+				target = 0
 		
-		# It the target variable reaches the end of the array, reset it
-		if (target >= len(enemyArray)):
-			target = 0
-	
-		roll = die_roll(6)
-		printy("", f)
-		printy("The player rolled a: " + str(roll),f)
+			roll = die_roll(6)
+			printy("", f)
+			printy("The player rolled a: " + str(roll),f)
 
-		# if the player rolls higher than the enemy's defence, they attack
-		if (roll > enemyArray[target].defence):
-			printy("you successfully attack " + enemyArray[target].uid,f)
-			enemyArray[target].health -= player.attack
-			if (enemyArray[target].health <= 0):
-				printy("You killed " + enemyArray[target].uid,f)
-				points += 1
-				enemyArray.pop(target)
-				if (len(enemyArray) == 0):
-					printy("Congrats! You killed all the zombies", f)
-					break
-				target -= 1
-	
-		# if the player rolls lower than the enemy's defence, the attack deplete's the enemy's defence stat
-		else:
-			printy("you miss the zombie",f)
-			enemyArray[target].defence -= player.attack
+			# if the player rolls higher than the enemy's defence, they attack
+			if (roll > enemyArray[target].defence):
+				printy("you successfully attack " + enemyArray[target].uid,f)
+				enemyArray[target].health -= player.attack
+				if (enemyArray[target].health <= 0):
+					printy("You killed " + enemyArray[target].uid,f)
+					points += 1
+					enemyArray.pop(target)
+					if (len(enemyArray) == 0):
+						printy("Congrats! You killed all the zombies", f)
+						break
+					target -= 1
+		
+			# if the player rolls lower than the enemy's defence, the attack deplete's the enemy's defence stat
+			else:
+				printy("you miss the zombie",f)
+				enemyArray[target].defence -= player.attack
+		except IndexError:
+			printy("You've got a move, but there are no zombies left", f)
 	
 	enemyStats(enemyArray, f)
 	
