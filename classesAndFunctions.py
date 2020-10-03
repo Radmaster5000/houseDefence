@@ -113,7 +113,7 @@ def round(roundNum, safehouseObj, playerObj, oldEnemyArray, pointsValue, textFil
 
 	for turns in range(0, player.speed):
 		
-		try:
+		# try:
 			# It the target variable reaches the end of the array, reset it
 			if (target >= len(enemyArray)):
 				target = 0
@@ -133,14 +133,14 @@ def round(roundNum, safehouseObj, playerObj, oldEnemyArray, pointsValue, textFil
 					if (len(enemyArray) == 0):
 						printy("Congrats! You killed all the zombies", f)
 						break
-					target -= 1
 		
 			# if the player rolls lower than the enemy's defence, the attack deplete's the enemy's defence stat
 			else:
 				printy("you miss the zombie",f)
 				enemyArray[target].defence -= player.attack
-		except IndexError:
-			printy("You've got a move, but there are no zombies left", f)
+		# print message if the player has more goes than there are zombies
+		# except IndexError:
+		# 	printy("You've got a move, but there are no zombies left", f)
 	
 	enemyStats(enemyArray, f)
 	
