@@ -6,6 +6,15 @@ Added a custom print function that will print to the console and also save the o
 
 ************************
 
+UPDATE 13/10/20
+
+Added a 'skip' to the interval round but realised that I'm modifying a new variable stat, not the original variable stat. e.g. If objVar = player, I think I'm returning objVar.speed rather than player.speed. It means the safehouse is mysteriously recovering points when it shouldn't.
+
+TODO: FIX THIS!
+
+**********
+
+
 UPDATE 28/09/20
 
 I think I've got a satisfactory regex parser working, but I don't know if it's much better than the branched if statements I had before. I'll have to catch any mis-spellings and try to incorporate it into the main program. It requires more lines, but will also catch any mixed-case letterings.

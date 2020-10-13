@@ -202,26 +202,36 @@ def round_interval(safehouseObj, playerObj, pointsValue, textFile):
 	while (points > 0):
 
 		#create a parser that will separate building and player stats
+		objVarCheck = False
+		while (objVarCheck != True):
 
-		choice = input("> ")
+			choice = input("> ")
 
-		if (len(choice) > 0):
+			if (choice == 'skip'):
+				return safehouse, player, points
 
-			parsed = twoWordInput.match(choice)
+			if (len(choice) > 0):
 
-			if (pl.match(parsed.group(1))):
-				objVar = player
-			elif (sa.match(parsed.group(1))):
-				objVar = safehouse
+				parsed = twoWordInput.match(choice)
+				
+				if (pl.match(parsed.group(1))):
+					objVar = player
+					objVarCheck = True
+				elif (sa.match(parsed.group(1))):
+					objVar = safehouse
+					objVarCheck = True
+				else:
+					printy("sorry, don't recognise " + choice, f)
 
-			if (he.match(parsed.group(2))):
-				objVar.health += 1
-			elif (at.match(parsed.group(2))):
-				objVar.attack += 1
-			elif (de.match(parsed.group(2))):
-				objVar.defence += 1
-			elif (sp.match(parsed.group(2))):
-				objVar.speed += 1
+			
+		if (he.match(parsed.group(2))):
+			objVar.health += 1
+		elif (at.match(parsed.group(2))):
+			objVar.attack += 1
+		elif (de.match(parsed.group(2))):
+			objVar.defence += 1
+		elif (sp.match(parsed.group(2))):
+			objVar.speed += 1
 		else:
 			return safehouse, player, points
 		
